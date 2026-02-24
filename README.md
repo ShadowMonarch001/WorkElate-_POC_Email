@@ -95,8 +95,6 @@ Open your browser at the URL shown (usually [http://localhost:8501](http://local
 3. New embedding is generated 
 4. Updated vector is upserted into Pinecone 
 
-→ **Project state is now mutated and persisted.**
-
 # 🔍 Querying a Project
 Ask natural questions like:
 - "What is the current status?"

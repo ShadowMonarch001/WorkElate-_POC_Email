@@ -1,0 +1,18 @@
+[
+    {
+        "customer_id": "C101",
+        "project_id": "P-ALPHA-01",
+        "dev_id": "DEV-MEET-07",
+        "client_name": "TechFlow Solutions",
+        "project_details": "Project Alpha: Migrating legacy servers to AWS. Status: 80% complete. Blocker: Waiting for SSL certs.",
+        "last_interaction": "Email received yesterday regarding security audit."
+    },
+    {
+        "customer_id": "C202",
+        "project_id": "P-SOLAR-02",
+        "dev_id": "DEV-ANISH-09",
+        "client_name": "GreenGrid Energy",
+        "project_details": "Project SolarSync: Dashboard UI development. Status: Design phase. Next step: User testing Monday.",
+        "last_interaction": "PM requested mobile responsiveness update."
+    }
+]

@@ -69,68 +69,42 @@ A vector database that behaves like a **living project memory** instead of stati
 git clone https://github.com/your-username/workelate.git
 cd workelate
 ```
-2️⃣ Install Dependencies
-pip install -r requirements.txt
-3️⃣ Configure Environment Variables
+# 4️⃣ Ingest Initial Data
+Make sure `data.json` is populated with your project records, then run:
 
-Create a .env file in the root directory:
-
-OPENAI_API_KEY=your_openai_key
-GROQ_API_KEY=your_groq_key
-PINECONE_API_KEY=your_pinecone_key
-4️⃣ Ingest Initial Data
-
-Ensure data.json is populated, then initialize your Pinecone index:
-
+```bash
 python ingest.py
-5️⃣ Run the Application
+```
+This initializes your Pinecone index with the initial project data.
+
+# 5️⃣ Run the Application
+
+```bash
 streamlit run app.py
-💡 Usage
-📝 Updating a Project
+```
+Open your browser at the URL shown (usually [http://localhost:8501](http://localhost:8501)).
 
-Enter a Project ID (e.g., P-ALPHA-01) and provide a natural language update:
+# 💡 Usage
 
-"The frontend is done"
+# 📝 Updating a Project
+- Enter a **Project ID** (example: `P-ALPHA-01`) 
+- Write a natural language update, e.g.: _"The frontend is done"_
 
-Internal Flow:
+**Internal flow:**
+1. Project record is retrieved from Pinecone 
+2. Update is appended to the Details field 
+3. New embedding is generated 
+4. Updated vector is upserted into Pinecone 
 
-Project record is retrieved
+→ **Project state is now mutated and persisted.**
 
-Update appended to the Details field
+# 🔍 Querying a Project
+Ask natural questions like:
+- "What is the current status?"
+- "Whats the progress so far?"
+- "Any blockers?"
 
-New embedding generated
-
-Updated vector upserted into Pinecone
-
-Your project state is now mutated and persisted.
-
-🔍 Querying a Project
-
-Ask contextual questions like:
-
-"What is the current status?"
-
-The system:
-
-Retrieves the latest vector
-
-Injects updated context into Llama 3.3
-
-Returns a professional summary
-
-🧩 Why This Matters
-
-WorkElate demonstrates how to move beyond static RAG into:
-
-Stateful AI systems
-
-Mutable vector memory
-
-Real-time semantic re-indexing
-
-Natural language-driven project management
-
-It’s a practical exploration of stateful AI applications using modern LLM infrastructure.
-
-
-If you found this interesting, consider ⭐ starring the repo and experimenting with your own “Living RAG” workflows.
+**Internal flow:**
+1. Retrieves the latest vector state 
+2. Injects updated context into Llama 3.3 
+3. Returns a professional, up-to-date summary

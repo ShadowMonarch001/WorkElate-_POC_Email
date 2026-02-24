@@ -50,8 +50,7 @@ A vector database that behaves like a **living project memory** instead of stati
 ## 📂 Project Structure
 
 
-.
-├── app.py # Main Streamlit application (UI)
+. ├── app.py # Main Streamlit application (UI)
 ├── ingest.py # Script to push data.json to Pinecone
 ├── data.json # Initial seed data for project records
 ├── .env # API Keys (OpenAI, Pinecone, Groq)
